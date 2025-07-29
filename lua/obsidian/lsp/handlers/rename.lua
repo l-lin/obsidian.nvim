@@ -77,8 +77,8 @@ local function validate_new_name(name)
     if name == base_as_id then
       return false
     end
-    local note = Note.from_file(path)
-    if note then
+    local ok, note = pcall(Note.from_file_async, path)
+    if ok and note then
       if name == note.id then
         return false
       end

@@ -136,10 +136,6 @@ SnacksPicker.pick = function(self, values, opts)
   local pick_opts = vim.tbl_extend("force", map or {}, {
     title = opts.prompt_title,
     items = entries,
-    layout = {
-      preview = preview,
-      preset = "default",
-    },
     format = "text",
     confirm = function(picker, item, action)
       picker:close()
